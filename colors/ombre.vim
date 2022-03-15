@@ -1,6 +1,6 @@
 " ombre.vim - Vim color scheme for 16-color terminals
 " inspired by noctu.vim and base16-dracula.vim
-" ------------------------------------------------------------------
+" ----------------------------------------------------
 
 " Scheme setup {{{
 set background=dark
@@ -14,43 +14,43 @@ let g:colors_name = "ombre"
 
 "}}}
 " Vim UI {{{
-hi Normal              ctermfg=7     ctermbg=0
+hi Normal              ctermfg=NONE  ctermbg=0
 hi Cursor              ctermfg=NONE  ctermbg=NONE
 hi CursorLine          ctermfg=NONE  ctermbg=7
-hi MatchParen          ctermfg=14    ctermbg=8 cterm=underline
+hi MatchParen          ctermfg=4    ctermbg=8 cterm=underline
 hi Pmenu               ctermfg=15    ctermbg=0
 hi PmenuThumb          ctermbg=7
 hi PmenuSBar           ctermbg=8
-hi PmenuSel            ctermfg=14    ctermbg=8
+hi PmenuSel            ctermfg=4    ctermbg=8
 hi ColorColumn         ctermbg=0
-hi Exception ctermfg=4
+hi Exception ctermfg=5
 hi Macro ctermfg=1
 hi TooLong ctermfg=1
 hi SpellBad            ctermfg=1     ctermbg=NONE cterm=undercurl
 hi SpellCap            ctermfg=3     ctermbg=NONE cterm=undercurl
-hi SpellRare           ctermfg=11    ctermbg=NONE cterm=underline
-hi SpellLocal          ctermfg=7     ctermbg=NONE cterm=undercurl
+hi SpellRare           ctermfg=15    ctermbg=NONE cterm=underline
+hi SpellLocal          ctermfg=NONE  ctermbg=NONE cterm=undercurl
 hi NonText             ctermfg=4
-hi Structure ctermfg=4
+hi Structure           ctermfg=5
 hi LineNr              ctermfg=7     ctermbg=0    cterm=NONE
-hi Define ctermfg=4
+hi Define ctermfg=5
 hi CursorLineNr        ctermfg=14    ctermbg=NONE cterm=bold
 hi Visual              ctermfg=NONE  ctermbg=8
 hi VisualNOS           ctermfg=1     ctermbg=NONE
 hi Debug               ctermfg=1     ctermbg=0
 hi IncSearch           ctermfg=15    ctermbg=5    cterm=NONE
-hi Search              ctermfg=15    ctermbg=6
-hi StatusLine          ctermfg=14    ctermbg=8    cterm=NONE
+hi Search              ctermfg=0     ctermbg=4
+hi StatusLine          ctermfg=4    ctermbg=8    cterm=NONE
 hi StatusLineNC        ctermfg=NONE  ctermbg=0    cterm=NONE
-hi StatusLineTerm      ctermfg=14    ctermbg=8    cterm=NONE
+hi StatusLineTerm      ctermfg=4    ctermbg=8    cterm=NONE
 hi StatusLineTermNC    ctermfg=NONE  ctermbg=0    cterm=NONE
 hi VertSplit           ctermfg=8     ctermbg=NONE cterm=NONE
 hi TabLine             ctermfg=4     ctermbg=0    cterm=NONE
 hi Substitute          ctermfg=15    ctermbg=0
-hi TabLineSel          ctermfg=14    ctermbg=8
+hi TabLineSel          ctermfg=4    ctermbg=8
 hi Folded              ctermfg=4     ctermbg=0    cterm=bold,italic
 hi Conceal             ctermfg=5     ctermbg=NONE
-hi Directory           ctermfg=14    ctermbg=NONE cterm=NONE
+hi Directory           ctermfg=4     ctermbg=NONE
 hi Title               ctermfg=5     ctermbg=NONE cterm=bold
 hi ErrorMsg            ctermfg=0     ctermbg=1 cterm=NONE
 hi DiffAdd             ctermfg=2     ctermbg=NONE cterm=inverse
@@ -60,8 +60,8 @@ hi DiffChange          ctermfg=3     ctermbg=NONE cterm=inverse
 hi DiffDelete          ctermfg=1     ctermbg=NONE cterm=inverse
 hi DiffFile            ctermfg=1     ctermbg=0
 hi DiffRemoved         ctermfg=1     ctermbg=0
-hi DiffText            ctermfg=4     ctermbg=0    cterm=inverse
-hi Conditional         ctermfg=4
+hi DiffText            ctermfg=5     ctermbg=NONE cterm=inverse
+hi Conditional         ctermfg=5
 hi DiffLine            ctermfg=5     ctermbg=0
 hi User1               ctermfg=1     ctermbg=0
 hi User2               ctermfg=2     ctermbg=0
@@ -78,8 +78,8 @@ hi SignColumn          ctermfg=4     ctermbg=0
 hi! link WildMenu      Visual
 hi FoldColumn          ctermfg=12    ctermbg=0
 hi WarningMsg          ctermfg=0     ctermbg=3
-hi WildMenu            ctermfg=14    ctermbg=NONE
-hi MoreMsg             ctermfg=14    cterm=NONE
+hi WildMenu            ctermfg=4    ctermbg=NONE
+hi MoreMsg             ctermfg=4
 hi Question            ctermfg=5
 hi! link ModeMsg       MoreMsg
 hi! link TabLineFill   TabLine
@@ -88,33 +88,33 @@ hi SpecialChar         ctermfg=3
 
 "}}}
 " Generic syntax {{{
-hi Delimiter           ctermfg=14
+hi Delimiter           ctermfg=15
 hi Comment             ctermfg=7    cterm=italic
 hi Underlined          ctermfg=1    cterm=underline
-hi Type                ctermfg=4
-hi Typedef ctermfg=4
+hi Type                ctermfg=5    cterm=NONE
+hi Typedef             ctermfg=4
 hi String              ctermfg=2    cterm=NONE
-hi Keyword             ctermfg=4
-hi Label               ctermfg=4
+hi Keyword             ctermfg=5
+hi Label               ctermfg=5
 hi Todo                ctermfg=3    ctermbg=NONE term=NONE
 hi Urgent              ctermfg=1    ctermbg=NONE term=bold,underline
 hi Done                ctermfg=4    ctermbg=NONE cterm=bold,underline
-hi Function            ctermfg=14
-hi Include             ctermfg=4
+hi Function            ctermfg=4
+hi Include             ctermfg=5
 hi Identifier          ctermfg=1    cterm=NONE
-hi Statement           ctermfg=4    cterm=bold
+hi Statement           ctermfg=5
 hi Constant            ctermfg=11
-hi Float               ctermfg=11
+hi Float               ctermfg=NONE
 hi Conceal             ctermfg=5
-hi Number              ctermfg=11   cterm=NONE
-hi Boolean             ctermfg=4
+hi Number              ctermfg=NONE   cterm=NONE
+hi Boolean             ctermfg=5
 hi Special             ctermfg=12
-hi SpecialComment      ctermfg=14  cterm=italic
+hi SpecialComment      ctermfg=4  cterm=italic
 hi Ignore              ctermfg=0
-hi PreProc             ctermfg=4    cterm=NONE
-hi Repeat              ctermfg=4
-hi StorageClass        ctermfg=4
-hi Operator            ctermfg=4    cterm=bold
+hi PreProc             ctermfg=5    cterm=NONE
+hi Repeat              ctermfg=5
+hi StorageClass        ctermfg=5
+hi Operator            ctermfg=5    cterm=bold
 hi Character           ctermfg=2    cterm=NONE
 " hi! link Operator    Delimiter
 hi! link Error         ErrorMsg
@@ -122,7 +122,7 @@ hi Tag ctermfg=9
 
 " Awk
 hi awkCharClass ctermfg=15
-hi awkPatterns ctermfg=4 cterm=bold
+hi awkPatterns  ctermfg=5 cterm=bold
 
 " C
 hi cPreCondit ctermfg=6
@@ -139,16 +139,16 @@ hi csModifier           ctermfg=6
 " CSS
 hi cssColor             ctermfg=12
 hi cssClassName         ctermfg=6
-hi cssAttributeSelector ctermfg=15
-hi cssDefinition        ctermfg=15 cterm=NONE
-hi cssIdentifier        ctermfg=15 cterm=underline
-hi cssStringQ           ctermfg=15
+hi cssAttributeSelector ctermfg=14
+hi cssDefinition        ctermfg=14 cterm=NONE
+hi cssIdentifier        ctermfg=14 cterm=underline
+hi cssStringQ           ctermfg=14
 
 "}}}
 " HTML {{{
 hi htmlTagName              ctermfg=4
 hi htmlTag                  ctermfg=4
-hi htmlArg                  ctermfg=15
+hi htmlArg                  ctermfg=14
 hi htmlH1                   cterm=bold
 hi htmlBold                 ctermfg=9 cterm=bold
 hi htmlItalic               ctermfg=6 cterm=underline
@@ -165,13 +165,13 @@ hi! link htmlEndTag         htmlTag
 hi xmlTagName       ctermfg=2
 hi xmlTag           ctermfg=10
 hi! link xmlString  xmlTagName
-hi xmlAttrib        ctermfg=15
-hi xmlNamespace     ctermfg=15
+hi xmlAttrib        ctermfg=14
+hi xmlNamespace     ctermfg=14
 hi! link xmlEndTag  xmlTag
 hi! link xmlEqual   xmlTag
 
-hi yamlBlockMappingKey ctermfg=15
-hi yamlKey ctermfg=15
+hi yamlBlockMappingKey ctermfg=14
+hi yamlKey ctermfg=14
 
 "}}}
 " JavaScript {{{
@@ -179,7 +179,7 @@ hi! link javaScript        Normal
 hi! link javaScriptBraces  Delimiter
 hi javaScriptNumber  ctermfg=11
 
-hi jsonKeyword  ctermfg=15
+hi jsonKeyword  ctermfg=14
 
 " Java
 hi javaOperator ctermfg=5
@@ -203,24 +203,24 @@ hi! link markdownURLDelimiter       Delimiter
 hi! link markdownCodeDelimiter      NonText
 hi markdownLinkDelimiter            ctermfg=5 ctermbg=NONE cterm=NONE
 hi! link markdownLinkTextDelimiter  markdownLinkDelimiter
-hi markdownLinkText                 ctermfg=14 ctermbg=NONE cterm=NONE
+hi markdownLinkText                 ctermfg=4
 hi! link markdownUrl                markdownLinkText
 hi! link markdownUrlTitleDelimiter  markdownLinkText
 hi! link markdownAutomaticLink      markdownLinkText
 hi! link markdownIdDeclaration      markdownLinkText
-hi markdownCode                     ctermfg=15
+hi markdownCode                     ctermfg=14
 hi markdownCodeBlock                ctermfg=2 ctermbg=NONE cterm=NONE
 hi! link markdownCodeBlock markdownCode
 hi! link markdownCodeDelimiter markdownCode
 hi! link markdownFootnote markdownCode
-hi markdownId ctermfg=15
-hi markdownIdDeclaration ctermfg=15
+hi markdownId ctermfg=14
+hi markdownIdDeclaration ctermfg=14
 hi markdownBold                     ctermfg=5 ctermbg=NONE cterm=bold
 hi markdownItalic                   ctermfg=5 ctermbg=NONE cterm=italic
-hi markdownBlockquote               ctermfg=15
+hi markdownBlockquote               ctermfg=14
 hi markdownRule                     ctermfg=15 ctermbg=NONE cterm=italic,bold
 
-hi markdownH1 ctermfg=14 ctermbg=NONE cterm=NONE
+hi markdownH1 ctermfg=4
 hi markdownH2 ctermfg=3 ctermbg=NONE cterm=bold
 hi markdownH3 ctermfg=2 ctermbg=NONE cterm=bold
 hi markdownH4 ctermfg=2 ctermbg=NONE cterm=bold
@@ -234,12 +234,12 @@ hi markdownOrderedListMarker ctermfg=3 ctermbg=NONE cterm=bold
 " Ruby {{{
 hi! link rubyDefine                 Statement
 hi! link rubyLocalVariableOrMethod  Identifier
-hi rubyConstant               ctermfg=15
+hi rubyConstant               ctermfg=14
 hi! link rubyInstanceVariable       Number
 hi rubyStringDelimiter ctermfg=2
 hi rubyRegexp                 ctermfg=12
 hi rubyInterpolationDelimiter ctermfg=14
-hi rubySymbol ctermfg=2
+hi rubySymbol ctermfg=15
 
 "}}}
 " Git {{{
@@ -281,14 +281,14 @@ hi! link lessVariableValue  Normal
 hi! link NERDTreeHelp       Comment
 hi! link NERDTreeExecFile   String
 hi NERDTreeDirSlash         ctermfg=5
-hi NERDTreeExecFile         ctermfg=15
+hi NERDTreeExecFile         ctermfg=14
 
 " Sass
 hi sassMixinName    ctermfg=5
 hi sassidChar       ctermfg=1
 hi sassClassChar    ctermfg=11
-hi sassClass        ctermfg=15
-hi sassId           ctermfg=15
+hi sassClass        ctermfg=14
+hi sassId           ctermfg=14
 hi sassInclude      ctermfg=6
 hi sassMixing       ctermfg=6
 
@@ -319,6 +319,7 @@ hi! link VimwikiHeader3     markdownH3
 hi! link VimwikiHeader4     markdownH4
 hi! link VimwikiHeader5     markdownH5
 hi! link VimwikiHeader6     markdownH6
+hi VimwikiLink ctermfg=4 cterm=underline
 
 "}}}
 " Help {{{
@@ -395,7 +396,7 @@ hi diffRemoved          ctermfg=1
 hi! link diffFile       PreProc
 hi! link diffLine       Title
 
-hi gitconfigVariable    ctermfg=15
+hi gitconfigVariable    ctermfg=14
 
 "}}}
 " Plug {{{
