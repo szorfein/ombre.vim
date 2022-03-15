@@ -12,55 +12,56 @@ endif
 
 let g:colors_name = "ombre"
 
-
 "}}}
 " Vim UI {{{
 hi Normal              ctermfg=7     ctermbg=0
-hi Cursor              ctermfg=0     ctermbg=7
-hi CursorLine          ctermbg=0     cterm=NONE
-hi MatchParen          ctermfg=7     ctermbg=NONE cterm=underline
+hi Cursor              ctermfg=NONE  ctermbg=NONE
+hi CursorLine          ctermfg=NONE  ctermbg=7
+hi MatchParen          ctermfg=14    ctermbg=8 cterm=underline
 hi Pmenu               ctermfg=15    ctermbg=0
 hi PmenuThumb          ctermbg=7
 hi PmenuSBar           ctermbg=8
-hi PmenuSel            ctermfg=0     ctermbg=4
+hi PmenuSel            ctermfg=14    ctermbg=8
 hi ColorColumn         ctermbg=0
-hi Exception ctermfg=1
+hi Exception ctermfg=4
 hi Macro ctermfg=1
 hi TooLong ctermfg=1
-hi SpellBad            ctermfg=1     ctermbg=NONE cterm=underline
-hi SpellCap            ctermfg=5     ctermbg=NONE cterm=underline
+hi SpellBad            ctermfg=1     ctermbg=NONE cterm=undercurl
+hi SpellCap            ctermfg=3     ctermbg=NONE cterm=undercurl
 hi SpellRare           ctermfg=11    ctermbg=NONE cterm=underline
-hi SpellLocal          ctermfg=4     ctermbg=NONE cterm=underline
+hi SpellLocal          ctermfg=7     ctermbg=NONE cterm=undercurl
 hi NonText             ctermfg=4
-hi Structure ctermfg=6
-hi LineNr              ctermfg=4     ctermbg=0    cterm=NONE
-hi Define ctermfg=6
+hi Structure ctermfg=4
+hi LineNr              ctermfg=7     ctermbg=0    cterm=NONE
+hi Define ctermfg=4
 hi CursorLineNr        ctermfg=14    ctermbg=NONE cterm=bold
 hi Visual              ctermfg=NONE  ctermbg=8
 hi VisualNOS           ctermfg=1     ctermbg=NONE
 hi Debug               ctermfg=1     ctermbg=0
-hi IncSearch           ctermfg=15    ctermbg=0    cterm=NONE
-hi Search              ctermfg=3     ctermbg=0
-hi StatusLine          ctermfg=5     ctermbg=8    cterm=NONE
-hi StatusLineNC        ctermfg=4     ctermbg=0    cterm=bold
-hi VertSplit           ctermfg=8     ctermbg=8    cterm=NONE
+hi IncSearch           ctermfg=15    ctermbg=5    cterm=NONE
+hi Search              ctermfg=15    ctermbg=6
+hi StatusLine          ctermfg=14    ctermbg=8    cterm=NONE
+hi StatusLineNC        ctermfg=NONE  ctermbg=0    cterm=NONE
+hi StatusLineTerm      ctermfg=14    ctermbg=8    cterm=NONE
+hi StatusLineTermNC    ctermfg=NONE  ctermbg=0    cterm=NONE
+hi VertSplit           ctermfg=8     ctermbg=NONE cterm=NONE
 hi TabLine             ctermfg=4     ctermbg=0    cterm=NONE
 hi Substitute          ctermfg=15    ctermbg=0
-hi TabLineSel          ctermfg=2     ctermbg=0
+hi TabLineSel          ctermfg=14    ctermbg=8
 hi Folded              ctermfg=4     ctermbg=0    cterm=bold,italic
 hi Conceal             ctermfg=5     ctermbg=NONE
-hi Directory           ctermfg=5     ctermbg=NONE cterm=NONE
+hi Directory           ctermfg=14    ctermbg=NONE cterm=NONE
 hi Title               ctermfg=5     ctermbg=NONE cterm=bold
-hi ErrorMsg            ctermfg=1     ctermbg=NONE cterm=bold
-hi DiffAdd             ctermfg=2     ctermbg=0
+hi ErrorMsg            ctermfg=0     ctermbg=1 cterm=NONE
+hi DiffAdd             ctermfg=2     ctermbg=NONE cterm=inverse
 hi DiffAdded           ctermfg=2     ctermbg=0
 hi DiffNewFile         ctermfg=2     ctermbg=0
-hi DiffChange          ctermfg=4     ctermbg=0
-hi DiffDelete          ctermfg=1     ctermbg=0
+hi DiffChange          ctermfg=3     ctermbg=NONE cterm=inverse
+hi DiffDelete          ctermfg=1     ctermbg=NONE cterm=inverse
 hi DiffFile            ctermfg=1     ctermbg=0
 hi DiffRemoved         ctermfg=1     ctermbg=0
-hi DiffText            ctermfg=5     ctermbg=0    cterm=bold
-hi Conditional         ctermfg=6
+hi DiffText            ctermfg=4     ctermbg=0    cterm=inverse
+hi Conditional         ctermfg=4
 hi DiffLine            ctermfg=5     ctermbg=0
 hi User1               ctermfg=1     ctermbg=0
 hi User2               ctermfg=2     ctermbg=0
@@ -76,47 +77,51 @@ hi PMenu               ctermfg=7     ctermbg=0
 hi SignColumn          ctermfg=4     ctermbg=0
 hi! link WildMenu      Visual
 hi FoldColumn          ctermfg=12    ctermbg=0
-hi WarningMsg          ctermfg=1
-hi WildMenu            ctermfg=1
-hi MoreMsg             ctermfg=2     cterm=NONE
+hi WarningMsg          ctermfg=0     ctermbg=3
+hi WildMenu            ctermfg=14    ctermbg=NONE
+hi MoreMsg             ctermfg=14    cterm=NONE
 hi Question            ctermfg=5
 hi! link ModeMsg       MoreMsg
 hi! link TabLineFill   TabLine
 hi! link SpecialKey    NonText
-hi SpecialChar         ctermfg=14
+hi SpecialChar         ctermfg=3
 
 "}}}
 " Generic syntax {{{
 hi Delimiter           ctermfg=14
-hi Comment             ctermfg=4    cterm=italic
+hi Comment             ctermfg=7    cterm=italic
 hi Underlined          ctermfg=1    cterm=underline
-hi Type                ctermfg=9
-hi Typedef ctermfg=9
-hi String              ctermfg=2    cterm=bold
-hi Keyword             ctermfg=6
-hi Label               ctermfg=9
-hi Todo                ctermfg=9    ctermbg=0    term=bold,underline
+hi Type                ctermfg=4
+hi Typedef ctermfg=4
+hi String              ctermfg=2    cterm=NONE
+hi Keyword             ctermfg=4
+hi Label               ctermfg=4
+hi Todo                ctermfg=3    ctermbg=NONE term=NONE
 hi Urgent              ctermfg=1    ctermbg=NONE term=bold,underline
 hi Done                ctermfg=4    ctermbg=NONE cterm=bold,underline
-hi Function            ctermfg=5
-hi Include             ctermfg=5
+hi Function            ctermfg=14
+hi Include             ctermfg=4
 hi Identifier          ctermfg=1    cterm=NONE
-hi Statement           ctermfg=1    cterm=bold
+hi Statement           ctermfg=4    cterm=bold
 hi Constant            ctermfg=11
 hi Float               ctermfg=11
 hi Conceal             ctermfg=5
-hi Number              ctermfg=11   cterm=bold
-hi Boolean             ctermfg=11
+hi Number              ctermfg=11   cterm=NONE
+hi Boolean             ctermfg=4
 hi Special             ctermfg=12
+hi SpecialComment      ctermfg=14  cterm=italic
 hi Ignore              ctermfg=0
-hi PreProc             ctermfg=3    cterm=NONE
-hi Repeat              ctermfg=9
-hi StorageClass        ctermfg=9
-hi Operator            ctermfg=5    cterm=bold
-hi Character           ctermfg=1    cterm=NONE
+hi PreProc             ctermfg=4    cterm=NONE
+hi Repeat              ctermfg=4
+hi StorageClass        ctermfg=4
+hi Operator            ctermfg=4    cterm=bold
+hi Character           ctermfg=2    cterm=NONE
 " hi! link Operator    Delimiter
 hi! link Error         ErrorMsg
 hi Tag ctermfg=9
+
+" Awk
+hi awkPatterns ctermfg=4 cterm=bold
 
 " C
 hi cPreCondit ctermfg=6
@@ -187,7 +192,7 @@ hi! link markdownURLDelimiter       Delimiter
 hi! link markdownCodeDelimiter      NonText
 hi markdownLinkDelimiter            ctermfg=5 ctermbg=NONE cterm=NONE
 hi! link markdownLinkTextDelimiter  markdownLinkDelimiter
-hi markdownLinkText                 ctermfg=2 ctermbg=NONE cterm=bold,underline
+hi markdownLinkText                 ctermfg=14 ctermbg=NONE cterm=NONE
 hi! link markdownUrl                markdownLinkText
 hi! link markdownUrlTitleDelimiter  markdownLinkText
 hi! link markdownAutomaticLink      markdownLinkText
@@ -201,7 +206,7 @@ hi markdownItalic                   ctermfg=5 ctermbg=NONE cterm=italic
 hi markdownBlockquote               ctermfg=15 ctermbg=NONE cterm=italic,bold
 hi markdownRule                     ctermfg=15 ctermbg=NONE cterm=italic,bold
 
-hi markdownH1 ctermfg=3 ctermbg=NONE cterm=bold
+hi markdownH1 ctermfg=14 ctermbg=NONE cterm=NONE
 hi markdownH2 ctermfg=3 ctermbg=NONE cterm=bold
 hi markdownH3 ctermfg=2 ctermbg=NONE cterm=bold
 hi markdownH4 ctermfg=2 ctermbg=NONE cterm=bold
@@ -241,10 +246,10 @@ hi! link gitCommitFile      Directory
 hi gitCommitUntrackedFile   ctermfg=9
 hi! link gitCommitDiscardedType  gitCommitUnmergedType
 hi! link gitCommitDiscardedFile  gitCommitUnmergedFile
-hi GitGutterAdd             ctermfg=2 ctermbg=0 cterm=NONE
-hi GitGutterChange          ctermfg=5 ctermbg=0
+hi GitGutterAdd             ctermfg=2 ctermbg=NONE cterm=NONE
+hi GitGutterChange          ctermfg=3 ctermbg=NONE
 hi GitGutterDelete          ctermfg=1 ctermbg=0
-hi GitGutterChangeDelete ctermfg=6 ctermbg=0
+hi GitGutterChangeDelete ctermfg=1 ctermbg=0
 
 "}}}
 " Vim {{{
@@ -390,5 +395,16 @@ hi pythonInclude        ctermfg=6
 hi pythonStatement      ctermfg=6
 
 "}}}
+
+hi SignatureMarkText   ctermfg=14
+
+" ALE
+hi ALEWarningSign ctermfg=3
+hi ALEErrorSign   ctermfg=1 ctermbg=NONE cterm=NONE
+hi ALEWarning     ctermfg=3 cterm=undercurl
+hi ALEError       ctermfg=1 ctermbg=NONE cterm=NONE
+
+" VimPlug
+hi plugDeleted  ctermfg=NONE ctermbg=1
 
 " vim: fdm=marker:sw=2:sts=2:et
