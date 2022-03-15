@@ -121,6 +121,7 @@ hi! link Error         ErrorMsg
 hi Tag ctermfg=9
 
 " Awk
+hi awkCharClass ctermfg=15
 hi awkPatterns ctermfg=4 cterm=bold
 
 " C
@@ -138,12 +139,16 @@ hi csModifier           ctermfg=6
 " CSS
 hi cssColor             ctermfg=12
 hi cssClassName         ctermfg=6
+hi cssAttributeSelector ctermfg=15
+hi cssDefinition        ctermfg=15 cterm=NONE
+hi cssIdentifier        ctermfg=15 cterm=underline
+hi cssStringQ           ctermfg=15
 
 "}}}
 " HTML {{{
 hi htmlTagName              ctermfg=4
 hi htmlTag                  ctermfg=4
-hi htmlArg                  ctermfg=12
+hi htmlArg                  ctermfg=15
 hi htmlH1                   cterm=bold
 hi htmlBold                 ctermfg=9 cterm=bold
 hi htmlItalic               ctermfg=6 cterm=underline
@@ -160,15 +165,21 @@ hi! link htmlEndTag         htmlTag
 hi xmlTagName       ctermfg=2
 hi xmlTag           ctermfg=10
 hi! link xmlString  xmlTagName
-hi! link xmlAttrib  xmlTag
+hi xmlAttrib        ctermfg=15
+hi xmlNamespace     ctermfg=15
 hi! link xmlEndTag  xmlTag
 hi! link xmlEqual   xmlTag
+
+hi yamlBlockMappingKey ctermfg=15
+hi yamlKey ctermfg=15
 
 "}}}
 " JavaScript {{{
 hi! link javaScript        Normal
 hi! link javaScriptBraces  Delimiter
 hi javaScriptNumber  ctermfg=11
+
+hi jsonKeyword  ctermfg=15
 
 " Java
 hi javaOperator ctermfg=5
@@ -197,13 +208,16 @@ hi! link markdownUrl                markdownLinkText
 hi! link markdownUrlTitleDelimiter  markdownLinkText
 hi! link markdownAutomaticLink      markdownLinkText
 hi! link markdownIdDeclaration      markdownLinkText
-hi markdownCode                     ctermfg=2 ctermbg=NONE cterm=NONE
+hi markdownCode                     ctermfg=15
 hi markdownCodeBlock                ctermfg=2 ctermbg=NONE cterm=NONE
 hi! link markdownCodeBlock markdownCode
 hi! link markdownCodeDelimiter markdownCode
+hi! link markdownFootnote markdownCode
+hi markdownId ctermfg=15
+hi markdownIdDeclaration ctermfg=15
 hi markdownBold                     ctermfg=5 ctermbg=NONE cterm=bold
 hi markdownItalic                   ctermfg=5 ctermbg=NONE cterm=italic
-hi markdownBlockquote               ctermfg=15 ctermbg=NONE cterm=italic,bold
+hi markdownBlockquote               ctermfg=15
 hi markdownRule                     ctermfg=15 ctermbg=NONE cterm=italic,bold
 
 hi markdownH1 ctermfg=14 ctermbg=NONE cterm=NONE
@@ -220,7 +234,7 @@ hi markdownOrderedListMarker ctermfg=3 ctermbg=NONE cterm=bold
 " Ruby {{{
 hi! link rubyDefine                 Statement
 hi! link rubyLocalVariableOrMethod  Identifier
-hi rubyConstant               ctermfg=9
+hi rubyConstant               ctermfg=15
 hi! link rubyInstanceVariable       Number
 hi rubyStringDelimiter ctermfg=2
 hi rubyRegexp                 ctermfg=12
@@ -267,11 +281,14 @@ hi! link lessVariableValue  Normal
 hi! link NERDTreeHelp       Comment
 hi! link NERDTreeExecFile   String
 hi NERDTreeDirSlash         ctermfg=5
+hi NERDTreeExecFile         ctermfg=15
 
 " Sass
 hi sassMixinName    ctermfg=5
 hi sassidChar       ctermfg=1
 hi sassClassChar    ctermfg=11
+hi sassClass        ctermfg=15
+hi sassId           ctermfg=15
 hi sassInclude      ctermfg=6
 hi sassMixing       ctermfg=6
 
@@ -377,6 +394,8 @@ hi diffAdded            ctermfg=4
 hi diffRemoved          ctermfg=1
 hi! link diffFile       PreProc
 hi! link diffLine       Title
+
+hi gitconfigVariable    ctermfg=15
 
 "}}}
 " Plug {{{
