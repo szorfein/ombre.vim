@@ -3,14 +3,15 @@
 " ----------------------------------------------------
 
 " Scheme setup {{{
-set background=dark
-hi! clear
-
-if exists("syntax_on")
-  syntax reset
+if version > 580
+  hi clear
+  if exists("syntax_on")
+    syntax reset
+  endif
 endif
 
 let g:colors_name = "ombre"
+set background=dark
 
 " NONE
 hi Bold                cterm=bold
@@ -29,19 +30,52 @@ hi! link markdownItalic Italic
 " Black
 hi Cursor              ctermfg=0 ctermbg=8
 hi iCursor             ctermfg=0 ctermbg=8
-hi WarningMsg          ctermfg=0 ctermbg=9
+hi WarningMsg          ctermfg=0 ctermbg=3
 hi SignColumn          ctermfg=0 ctermbg=NONE
 hi EndOfBuffer         ctermfg=0 ctermbg=NONE
 hi Search              ctermfg=0 ctermbg=6 cterm=NONE
 
 " BrightBlack
+hi LineNr              ctermfg=8 ctermbg=NONE cterm=NONE
+hi SpecialKey          ctermfg=8 cterm=NONE
+hi Folded              ctermfg=8 ctermbg=0 cterm=NONE
+hi FoldColumn          ctermfg=8 ctermbg=0
 hi Comment             ctermfg=8 ctermbg=NONE cterm=italic term=NONE guifg=NONE gui=NONE
+hi helpBar             ctermfg=8
+
+hi Error               ctermfg=8 ctermbg=1 cterm=NONE
 hi ErrorMsg            ctermfg=8 ctermbg=1 cterm=NONE
 hi ModeMsg             ctermfg=8 ctermbg=NONE
+hi Pmenu               ctermfg=8 ctermbg=0
+hi PmenuSBar           ctermfg=8 ctermbg=0
 hi Question            ctermfg=8
+hi StatusLineNC        ctermfg=8 ctermbg=0 cterm=NONE term=NONE
+hi StatusLineTermNC    ctermfg=8 ctermbg=0 cterm=NONE
 hi TabLine             ctermfg=8 ctermbg=0 cterm=NONE
+hi Title               ctermfg=8 ctermbg=NONE
+
 
 hi! link TabLineFill   TabLine
+
+" Red
+hi ALEError            ctermfg=1 cterm=undercurl
+hi ALEErrorSign        ctermfg=1
+hi DiffDelete          ctermfg=1 ctermbg=0
+hi GitGutterDelete     ctermfg=1
+hi GitGutterChangeDelete ctermfg=1
+hi SpellBad            ctermfg=1 ctermbg=0 cterm=undercurl
+
+" BrightRed
+hi Decorator           ctermfg=9
+
+" Yellow
+hi ALEWarningSign      ctermfg=3
+hi ALEWarning          ctermfg=3 cterm=undercurl
+hi DiffChange          ctermfg=3 ctermbg=0
+hi GitGutterChange     ctermfg=3
+hi SpecialChar         ctermfg=3
+hi SpellCap            ctermfg=3 ctermbg=NONE cterm=undercurl
+hi Todo                ctermfg=3 ctermbg=NONE term=NONE
 
 " Green
 hi Character           ctermfg=2
@@ -75,7 +109,6 @@ hi PMenuThumb          ctermfg=6 ctermbg=0
 hi rustMacro           ctermfg=6 cterm=bold
 hi SpecialComment      ctermfg=6 cterm=italic
 hi StatusLine          ctermfg=6 ctermbg=8 cterm=NONE
-hi StatusLineNC        ctermfg=6 ctermbg=8 cterm=NONE term=NONE
 hi TabLineSel          ctermfg=6 ctermbg=8
 hi WildMenu            ctermfg=6 ctermbg=0
 
@@ -104,58 +137,45 @@ hi! link rustEnumVariant rustEnum
 hi! link sassidChar sassId
 
 " White
+hi CursorLineNr        ctermfg=7 ctermbg=0 cterm=NONE
+
+" BrightWhite
 hi IncSearch           ctermfg=15 ctermbg=1
+hi SpellRare           ctermfg=15 ctermbg=NONE cterm=underline
+hi Delimiter           ctermfg=15
+hi rubySymbol          ctermfg=15
 
 "}}}
 " Vim UI {{{
-hi Pmenu               ctermfg=NONE ctermbg=0
 hi PmenuThumb          ctermfg=NONE ctermbg=8
-hi PmenuSBar           ctermbg=NONE ctermbg=0
 hi PmenuSel            ctermfg=6    ctermbg=8
 hi Exception           ctermfg=5
 hi TooLong ctermfg=1
-hi SpellBad            ctermfg=1     ctermbg=NONE cterm=undercurl
-hi SpellCap            ctermfg=3     ctermbg=NONE cterm=undercurl
-hi SpellRare           ctermfg=15    ctermbg=NONE cterm=underline
 hi SpellLocal          ctermfg=7     ctermbg=NONE cterm=undercurl
 hi NonText             ctermfg=8
 hi Structure           ctermfg=5
-hi LineNr              ctermfg=8     ctermbg=NONE cterm=NONE
-hi CursorLineNr        ctermfg=NONE  ctermbg=0 cterm=NONE
 hi VisualNOS           ctermfg=1     ctermbg=NONE
 hi Debug               ctermfg=1     ctermbg=0
-hi StatusLineTerm      ctermfg=6     ctermbg=8    cterm=NONE
-hi StatusLineTermNC    ctermfg=NONE  ctermbg=8    cterm=NONE
 hi VertSplit           ctermfg=8     ctermbg=0    cterm=NONE term=NONE gui=NONE
 hi Substitute          ctermfg=15    ctermbg=0
-hi Folded              ctermfg=8     ctermbg=0    cterm=NONE
-hi Title               ctermfg=5     ctermbg=NONE cterm=bold
-hi Error               ctermfg=0     ctermbg=1 cterm=NONE
 hi DiffAdd             ctermfg=2     ctermbg=NONE cterm=inverse
 hi DiffAdded           ctermfg=2     ctermbg=0
 hi DiffNewFile         ctermfg=2     ctermbg=0
-hi DiffChange          ctermfg=3     ctermbg=0
-hi DiffDelete          ctermfg=1     ctermbg=0
 hi DiffFile            ctermfg=1     ctermbg=0
 hi DiffRemoved         ctermfg=1     ctermbg=0
 hi DiffText            ctermfg=5     ctermbg=0
 hi Conditional         ctermfg=5
 hi DiffLine            ctermfg=5     ctermbg=0
 hi PMenu               ctermfg=7     ctermbg=0
-hi FoldColumn          ctermfg=8     ctermbg=NONE
-hi! link SpecialKey    NonText
-hi SpecialChar         ctermfg=3
 
 "}}}
 " Generic syntax {{{
-hi Delimiter           ctermfg=15
 hi Underlined          ctermfg=1    cterm=underline
 hi Type                ctermfg=5    cterm=NONE
 hi Typedef             ctermfg=5
 hi String              ctermfg=2    cterm=NONE
 hi Keyword             ctermfg=5
 hi Label               ctermfg=5
-hi Todo                ctermfg=3    ctermbg=NONE term=NONE
 hi Urgent              ctermfg=1    ctermbg=NONE term=bold,underline
 hi Done                ctermfg=4    ctermbg=NONE cterm=bold,underline
 hi Include             ctermfg=5
@@ -276,7 +296,6 @@ hi! link rubyInstanceVariable       Number
 hi rubyStringDelimiter              ctermfg=2
 hi rubyRegexp                       ctermfg=12
 hi rubyInterpolationDelimiter       ctermfg=14
-hi rubySymbol                       ctermfg=15 cterm=bold
 
 "}}}
 " Git {{{
@@ -298,9 +317,6 @@ hi gitCommitUntrackedFile   ctermfg=9
 hi! link gitCommitDiscardedType  gitCommitUnmergedType
 hi! link gitCommitDiscardedFile  gitCommitUnmergedFile
 hi GitGutterAdd             ctermfg=2
-hi GitGutterChange          ctermfg=3
-hi GitGutterChangeDelete    ctermfg=1
-hi GitGutterDelete          ctermfg=1
 
 "}}}
 " Vim {{{
@@ -452,10 +468,6 @@ hi pythonStatement      ctermfg=6
 hi SignatureMarkText   ctermfg=14
 
 " ALE
-hi ALEWarningSign ctermfg=3
-hi ALEErrorSign   ctermfg=1
-hi ALEWarning     ctermfg=3 cterm=undercurl
-hi ALEError       ctermfg=1 cterm=undercurl
 
 " VimPlug
 hi plugDeleted  ctermfg=NONE ctermbg=1
