@@ -1,6 +1,6 @@
 " ombre.vim - Vim color scheme for 16-color terminals
-" inspired by noctu.vim and base16-dracula.vim
-" ----------------------------------------------------
+" inspired by noctu.vim, base16-dracula.vim and nord.vim
+" ------------------------------------------------------
 
 " Scheme setup {{{
 if version > 580
@@ -29,11 +29,15 @@ hi! link markdownItalic Italic
 
 " Black
 hi Cursor              ctermfg=0 ctermbg=8
-hi iCursor             ctermfg=0 ctermbg=8
-hi WarningMsg          ctermfg=0 ctermbg=3
-hi SignColumn          ctermfg=0 ctermbg=NONE
 hi EndOfBuffer         ctermfg=0 ctermbg=NONE
+hi Error               ctermfg=0 ctermbg=1 cterm=NONE
+hi ErrorMsg            ctermfg=0 ctermbg=1 cterm=NONE
+hi iCursor             ctermfg=0 ctermbg=8
+hi NonText             ctermfg=0
+hi SignColumn          ctermfg=0 ctermbg=NONE
 hi Search              ctermfg=0 ctermbg=6 cterm=NONE
+hi VertSplit           ctermfg=8 ctermbg=0 cterm=NONE term=NONE gui=NONE
+hi WarningMsg          ctermfg=0 ctermbg=3
 
 " BrightBlack
 hi LineNr              ctermfg=8 ctermbg=NONE cterm=NONE
@@ -42,20 +46,8 @@ hi Folded              ctermfg=8 ctermbg=0 cterm=NONE
 hi FoldColumn          ctermfg=8 ctermbg=0
 hi Comment             ctermfg=8 ctermbg=NONE cterm=italic term=NONE guifg=NONE gui=NONE
 hi helpBar             ctermfg=8
-
-hi Error               ctermfg=8 ctermbg=1 cterm=NONE
-hi ErrorMsg            ctermfg=8 ctermbg=1 cterm=NONE
-hi ModeMsg             ctermfg=8 ctermbg=NONE
 hi Pmenu               ctermfg=8 ctermbg=0
 hi PmenuSBar           ctermfg=8 ctermbg=0
-hi Question            ctermfg=8
-hi StatusLineNC        ctermfg=8 ctermbg=0 cterm=NONE term=NONE
-hi StatusLineTermNC    ctermfg=8 ctermbg=0 cterm=NONE
-hi TabLine             ctermfg=8 ctermbg=0 cterm=NONE
-hi Title               ctermfg=8 ctermbg=NONE
-
-
-hi! link TabLineFill   TabLine
 
 " Red
 hi ALEError            ctermfg=1 cterm=undercurl
@@ -64,6 +56,8 @@ hi DiffDelete          ctermfg=1 ctermbg=0
 hi GitGutterDelete     ctermfg=1
 hi GitGutterChangeDelete ctermfg=1
 hi SpellBad            ctermfg=1 ctermbg=0 cterm=undercurl
+
+hi! link diffRemoved DiffDelete
 
 " BrightRed
 hi Decorator           ctermfg=9
@@ -79,13 +73,30 @@ hi Todo                ctermfg=3 ctermbg=NONE term=NONE
 
 " Green
 hi Character           ctermfg=2
+hi String              ctermfg=2 cterm=NONE
+hi DiffAdd             ctermfg=2 ctermbg=0 cterm=inverse
+hi GitGutterAdd        ctermfg=2
+
+hi! link diffAdded DiffAdd
+hi! link diffChanged DiffChange
 
 " Blue
 
 " BrightBlue
 hi Define              ctermfg=12
+hi DiffText            ctermfg=12 ctermbg=0
+hi Exception           ctermfg=12
+hi Include             ctermfg=12
+hi Keyword             ctermfg=12
+hi Label               ctermfg=12
+hi mkdLineBreak        ctermfg=12
 hi Operator            ctermfg=12 cterm=bold
 hi PreProc             ctermfg=12 cterm=NONE
+hi Repeat              ctermfg=12
+hi rustPanic           ctermfg=12
+hi Structure           ctermfg=12
+hi Type                ctermfg=12 cterm=NONE
+hi Typedef             ctermfg=12
 
 hi! link Macro Define
 hi! link PreCondit PreProc
@@ -93,6 +104,7 @@ hi! link PreCondit PreProc
 " Magenta
 hi Float               ctermfg=5
 hi Number              ctermfg=5 cterm=NONE
+hi Boolean             ctermfg=5
 
 " Cyan
 hi asciidocMacroAttributes ctermfg=6
@@ -104,8 +116,8 @@ hi MatchParen          ctermfg=6 ctermbg=0
 hi markdownH1          ctermfg=6
 hi markdownLinkText    ctermfg=6
 hi MoreMsg             ctermfg=6 ctermbg=0 cterm=NONE
-hi PMenuSel            ctermfg=6 ctermbg=0
-hi PMenuThumb          ctermfg=6 ctermbg=0
+hi PmenuSel            ctermfg=6 ctermbg=0
+hi PmenuThumb          ctermfg=6 ctermbg=0
 hi rustMacro           ctermfg=6 cterm=bold
 hi SpecialComment      ctermfg=6 cterm=italic
 hi StatusLine          ctermfg=6 ctermbg=8 cterm=NONE
@@ -138,55 +150,45 @@ hi! link sassidChar sassId
 
 " White
 hi CursorLineNr        ctermfg=7 ctermbg=0 cterm=NONE
+hi ModeMsg             ctermfg=7 ctermbg=NONE
+hi Question            ctermfg=7
+hi SpellLocal          ctermfg=7 ctermbg=0 cterm=undercurl
+hi StatusLineNC        ctermfg=7 ctermbg=0 cterm=NONE term=NONE
+hi StatusLineTermNC    ctermfg=7 ctermbg=0 cterm=NONE
+hi TabLine             ctermfg=7 ctermbg=0 cterm=NONE
+hi Title               ctermfg=7
+
+hi! link TabLineFill   TabLine
 
 " BrightWhite
-hi IncSearch           ctermfg=15 ctermbg=1
+hi IncSearch           ctermfg=15 ctermbg=4
 hi SpellRare           ctermfg=15 ctermbg=NONE cterm=underline
 hi Delimiter           ctermfg=15
 hi rubySymbol          ctermfg=15
 
 "}}}
 " Vim UI {{{
-hi PmenuThumb          ctermfg=NONE ctermbg=8
-hi PmenuSel            ctermfg=6    ctermbg=8
-hi Exception           ctermfg=5
 hi TooLong ctermfg=1
-hi SpellLocal          ctermfg=7     ctermbg=NONE cterm=undercurl
-hi NonText             ctermfg=8
-hi Structure           ctermfg=5
 hi VisualNOS           ctermfg=1     ctermbg=NONE
 hi Debug               ctermfg=1     ctermbg=0
-hi VertSplit           ctermfg=8     ctermbg=0    cterm=NONE term=NONE gui=NONE
 hi Substitute          ctermfg=15    ctermbg=0
-hi DiffAdd             ctermfg=2     ctermbg=NONE cterm=inverse
-hi DiffAdded           ctermfg=2     ctermbg=0
 hi DiffNewFile         ctermfg=2     ctermbg=0
 hi DiffFile            ctermfg=1     ctermbg=0
-hi DiffRemoved         ctermfg=1     ctermbg=0
-hi DiffText            ctermfg=5     ctermbg=0
 hi Conditional         ctermfg=5
 hi DiffLine            ctermfg=5     ctermbg=0
-hi PMenu               ctermfg=7     ctermbg=0
 
 "}}}
 " Generic syntax {{{
 hi Underlined          ctermfg=1    cterm=underline
-hi Type                ctermfg=5    cterm=NONE
-hi Typedef             ctermfg=5
-hi String              ctermfg=2    cterm=NONE
-hi Keyword             ctermfg=5
-hi Label               ctermfg=5
 hi Urgent              ctermfg=1    ctermbg=NONE term=bold,underline
 hi Done                ctermfg=4    ctermbg=NONE cterm=bold,underline
-hi Include             ctermfg=5
 hi Identifier          ctermfg=1    cterm=NONE
 hi Statement           ctermfg=5
 hi Constant            ctermfg=11
-hi Boolean             ctermfg=5
 hi Special             ctermfg=12
-hi Repeat              ctermfg=5
 hi StorageClass        ctermfg=5
 " hi! link Operator    Delimiter
+
 hi! link Annotation Decorator
 hi! link Variable Identifier
 hi Tag ctermfg=9
@@ -316,7 +318,6 @@ hi! link gitCommitFile      Directory
 hi gitCommitUntrackedFile   ctermfg=9
 hi! link gitCommitDiscardedType  gitCommitUnmergedType
 hi! link gitCommitDiscardedFile  gitCommitUnmergedFile
-hi GitGutterAdd             ctermfg=2
 
 "}}}
 " Vim {{{
