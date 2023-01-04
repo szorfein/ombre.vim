@@ -146,6 +146,10 @@ hi! link rubyKeywordAsMethod Function
 hi! link rubyLocalVariableOrMethod Function
 
 " BrightCyan
+hi cssAttributeSelector ctermfg=14
+hi cssDefinition       ctermfg=14 cterm=NONE
+hi cssIdentifier       ctermfg=14 cterm=underline
+hi cssStringQ          ctermfg=14
 hi NERDTreeExecFile    ctermfg=14
 hi rubyConstant        ctermfg=14
 hi rustEnum            ctermfg=14 cterm=bold
@@ -160,11 +164,16 @@ hi xmlAttrib           ctermfg=14
 hi xmlNamespace        ctermfg=14
 hi yamlBlockMappingKey ctermfg=14
 
+hi! link cssClassName cssDefinition
+hi! link cssProp cssDefinition
+hi! link cssPseudoClass cssDefinition
 hi! link rustEnumVariant rustEnum
 hi! link sassidChar sassId
 
 " White
+hi Constant            ctermfg=7
 hi CursorLineNr        ctermfg=7 ctermbg=0 cterm=NONE
+hi Identifier          ctermfg=7 cterm=NONE
 hi ModeMsg             ctermfg=7 ctermbg=NONE
 hi Question            ctermfg=7
 hi SpellLocal          ctermfg=7 ctermbg=0 cterm=undercurl
@@ -174,7 +183,18 @@ hi TabLine             ctermfg=7 ctermbg=0 cterm=NONE
 hi Tag                 ctermfg=7
 hi Title               ctermfg=7
 
-hi! link TabLineFill   TabLine
+hi! link awkArrayElement Identifier
+hi! link awkFieldVars Identifier
+hi! link awkVariables Identifier
+hi! link mkdID Identifier
+hi! link rubyAttribute Identifier
+hi! link shDerefSimple Identifier
+hi! link shDerefVar Identifier
+hi! link TabLineFill TabLine
+hi! link typescriptMember Identifier
+hi! link typescriptDOMStorageMethod Identifier
+hi! link typescriptArrowFuncArg Identifier
+hi! link Variable Identifier
 
 " BrightWhite
 hi IncSearch           ctermfg=15 ctermbg=4
@@ -206,14 +226,9 @@ hi DiffLine            ctermfg=5     ctermbg=0
 hi Underlined          ctermfg=1    cterm=underline
 hi Urgent              ctermfg=1    ctermbg=NONE term=bold,underline
 hi Done                ctermfg=4    ctermbg=NONE cterm=bold,underline
-hi Identifier          ctermfg=1    cterm=NONE
 hi Statement           ctermfg=5
-hi Constant            ctermfg=11
 hi StorageClass        ctermfg=5
 " hi! link Operator    Delimiter
-
-hi! link rubyAttribute Identifier
-hi! link Variable Identifier
 
 " Awk
 hi awkCharClass ctermfg=14
@@ -231,14 +246,6 @@ hi csAttribute          ctermfg=9
 hi csContextualStatement ctermfg=6
 hi csModifier           ctermfg=6
 
-" CSS
-hi cssClassName         ctermfg=6
-hi cssAttributeSelector ctermfg=14
-hi cssDefinition        ctermfg=14 cterm=NONE
-hi cssIdentifier        ctermfg=14 cterm=underline
-hi cssStringQ           ctermfg=14
-
-"}}}
 " HTML {{{
 hi htmlTagName              ctermfg=4
 hi htmlTag                  ctermfg=4
