@@ -23,6 +23,7 @@ hi CursorLine          ctermfg=NONE ctermbg=0 cterm=NONE term=NONE guibg=NONE
 hi CursorColumn        ctermfg=NONE ctermbg=0 term=NONE guibg=NONE
 hi Normal              ctermfg=NONE ctermbg=0
 hi Visual              ctermfg=NONE ctermbg=8
+hi VisualNOS           ctermfg=NONE ctermbg=8
 
 hi! link markdownBold Bold
 hi! link markdownItalic Italic
@@ -40,14 +41,15 @@ hi VertSplit           ctermfg=8 ctermbg=0 cterm=NONE term=NONE gui=NONE
 hi WarningMsg          ctermfg=0 ctermbg=3
 
 " BrightBlack
+hi Comment             ctermfg=8 ctermbg=NONE cterm=italic term=NONE guifg=NONE gui=NONE
 hi LineNr              ctermfg=8 ctermbg=NONE cterm=NONE
-hi SpecialKey          ctermfg=8 cterm=NONE
 hi Folded              ctermfg=8 ctermbg=0 cterm=NONE
 hi FoldColumn          ctermfg=8 ctermbg=0
-hi Comment             ctermfg=8 ctermbg=NONE cterm=italic term=NONE guifg=NONE gui=NONE
 hi helpBar             ctermfg=8
 hi Pmenu               ctermfg=8 ctermbg=0
 hi PmenuSBar           ctermfg=8 ctermbg=0
+hi Special             ctermfg=8
+hi SpecialKey          ctermfg=8 cterm=NONE
 
 " Red
 hi ALEError            ctermfg=1 cterm=undercurl
@@ -55,12 +57,15 @@ hi ALEErrorSign        ctermfg=1
 hi DiffDelete          ctermfg=1 ctermbg=0
 hi GitGutterDelete     ctermfg=1
 hi GitGutterChangeDelete ctermfg=1
+hi plugDeleted         ctermfg=1
 hi SpellBad            ctermfg=1 ctermbg=0 cterm=undercurl
 
 hi! link diffRemoved DiffDelete
 
 " BrightRed
 hi Decorator           ctermfg=9
+
+hi! link Annotation Decorator
 
 " Yellow
 hi ALEWarningSign      ctermfg=3
@@ -71,11 +76,13 @@ hi SpecialChar         ctermfg=3
 hi SpellCap            ctermfg=3 ctermbg=NONE cterm=undercurl
 hi Todo                ctermfg=3 ctermbg=NONE term=NONE
 
+hi! link rubyRegexp SpecialChar
+
 " Green
 hi Character           ctermfg=2
-hi String              ctermfg=2 cterm=NONE
 hi DiffAdd             ctermfg=2 ctermbg=0 cterm=inverse
 hi GitGutterAdd        ctermfg=2
+hi String              ctermfg=2 cterm=NONE
 
 hi! link diffAdded DiffAdd
 hi! link diffChanged DiffChange
@@ -100,11 +107,17 @@ hi Typedef             ctermfg=12
 
 hi! link Macro Define
 hi! link PreCondit PreProc
+hi! link rubyBlockParameterList Operator
+hi! link rubyInterpolationDelimiter Keyword
+hi! link rubyPseudoVariable Keyword
 
 " Magenta
 hi Float               ctermfg=5
 hi Number              ctermfg=5 cterm=NONE
 hi Boolean             ctermfg=5
+
+hi! link cssColor Number
+hi! link javaScriptNumber Number
 
 " Cyan
 hi asciidocMacroAttributes ctermfg=6
@@ -129,6 +142,8 @@ hi! link markdownH3 markdownH1
 hi! link markdownH4 markdownH1
 hi! link markdownH5 markdownH1
 hi! link markdownH6 markdownH1
+hi! link rubyKeywordAsMethod Function
+hi! link rubyLocalVariableOrMethod Function
 
 " BrightCyan
 hi NERDTreeExecFile    ctermfg=14
@@ -156,6 +171,7 @@ hi SpellLocal          ctermfg=7 ctermbg=0 cterm=undercurl
 hi StatusLineNC        ctermfg=7 ctermbg=0 cterm=NONE term=NONE
 hi StatusLineTermNC    ctermfg=7 ctermbg=0 cterm=NONE
 hi TabLine             ctermfg=7 ctermbg=0 cterm=NONE
+hi Tag                 ctermfg=7
 hi Title               ctermfg=7
 
 hi! link TabLineFill   TabLine
@@ -166,10 +182,18 @@ hi SpellRare           ctermfg=15 ctermbg=NONE cterm=underline
 hi Delimiter           ctermfg=15
 hi rubySymbol          ctermfg=15
 
+hi! link awkComma Delimiter
+hi! link awkSemicolon Delimiter
+hi! link javaScriptBraces Delimiter
+hi! link lessCssAttribute Delimiter
+hi! link sassClassChar Delimiter
+hi! link shCmdParenRegion Delimiter
+hi! link shCmdSubRegion Delimiter
+hi! link xmlAttribPunct Delimiter
+
 "}}}
 " Vim UI {{{
 hi TooLong ctermfg=1
-hi VisualNOS           ctermfg=1     ctermbg=NONE
 hi Debug               ctermfg=1     ctermbg=0
 hi Substitute          ctermfg=15    ctermbg=0
 hi DiffNewFile         ctermfg=2     ctermbg=0
@@ -185,13 +209,11 @@ hi Done                ctermfg=4    ctermbg=NONE cterm=bold,underline
 hi Identifier          ctermfg=1    cterm=NONE
 hi Statement           ctermfg=5
 hi Constant            ctermfg=11
-hi Special             ctermfg=12
 hi StorageClass        ctermfg=5
 " hi! link Operator    Delimiter
 
-hi! link Annotation Decorator
+hi! link rubyAttribute Identifier
 hi! link Variable Identifier
-hi Tag ctermfg=9
 
 " Awk
 hi awkCharClass ctermfg=14
@@ -210,7 +232,6 @@ hi csContextualStatement ctermfg=6
 hi csModifier           ctermfg=6
 
 " CSS
-hi cssColor             ctermfg=12
 hi cssClassName         ctermfg=6
 hi cssAttributeSelector ctermfg=14
 hi cssDefinition        ctermfg=14 cterm=NONE
@@ -246,8 +267,6 @@ hi yamlKey ctermfg=14
 "}}}
 " JavaScript {{{
 hi! link javaScript        Normal
-hi! link javaScriptBraces  Delimiter
-hi javaScriptNumber  ctermfg=11
 
 hi jsonKeyword  ctermfg=14
 
@@ -293,11 +312,8 @@ hi markdownOrderedListMarker ctermfg=3 ctermbg=NONE cterm=bold
 "}}}
 " Ruby {{{
 hi! link rubyDefine                 Statement
-hi! link rubyLocalVariableOrMethod  Identifier
 hi! link rubyInstanceVariable       Number
 hi rubyStringDelimiter              ctermfg=2
-hi rubyRegexp                       ctermfg=12
-hi rubyInterpolationDelimiter       ctermfg=14
 
 "}}}
 " Git {{{
@@ -338,7 +354,6 @@ hi NERDTreeDirSlash         ctermfg=5
 
 " Sass
 hi sassMixinName    ctermfg=5
-hi sassClassChar    ctermfg=11
 hi sassInclude      ctermfg=6
 hi sassMixing       ctermfg=6
 
