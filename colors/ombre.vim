@@ -25,6 +25,8 @@ hi Normal              ctermfg=NONE ctermbg=0
 hi Visual              ctermfg=NONE ctermbg=8
 hi VisualNOS           ctermfg=NONE ctermbg=8
 
+hi! link htmlBold Bold
+hi! link htmlItalic Italic
 hi! link markdownBold Bold
 hi! link markdownItalic Italic
 
@@ -76,6 +78,7 @@ hi SpecialChar         ctermfg=3
 hi SpellCap            ctermfg=3 ctermbg=NONE cterm=undercurl
 hi Todo                ctermfg=3 ctermbg=NONE term=NONE
 
+hi! link htmlSpecialChar SpecialChar
 hi! link rubyRegexp SpecialChar
 
 " Green
@@ -106,6 +109,8 @@ hi Type                ctermfg=12 cterm=NONE
 hi Typedef             ctermfg=12
 
 hi! link Macro Define
+hi! link htmlTag Keyword
+hi! link htmlTagN htmlTag
 hi! link PreCondit PreProc
 hi! link rubyBlockParameterList Operator
 hi! link rubyInterpolationDelimiter Keyword
@@ -137,6 +142,12 @@ hi StatusLine          ctermfg=6 ctermbg=8 cterm=NONE
 hi TabLineSel          ctermfg=6 ctermbg=8
 hi WildMenu            ctermfg=6 ctermbg=0
 
+hi! link htmlH1 markdownH1
+hi! link htmlH2 markdownH1
+hi! link htmlH3 markdownH1
+hi! link htmlH4 markdownH1
+hi! link htmlH5 markdownH1
+hi! link htmlH6 markdownH1
 hi! link markdownH2 markdownH1
 hi! link markdownH3 markdownH1
 hi! link markdownH4 markdownH1
@@ -150,6 +161,7 @@ hi cssAttributeSelector ctermfg=14
 hi cssDefinition       ctermfg=14 cterm=NONE
 hi cssIdentifier       ctermfg=14 cterm=underline
 hi cssStringQ          ctermfg=14
+hi htmlArg             ctermfg=14
 hi NERDTreeExecFile    ctermfg=14
 hi rubyConstant        ctermfg=14
 hi rustEnum            ctermfg=14 cterm=bold
@@ -174,6 +186,7 @@ hi! link sassidChar sassId
 hi Constant            ctermfg=7
 hi CursorLineNr        ctermfg=7 ctermbg=0 cterm=NONE
 hi Identifier          ctermfg=7 cterm=NONE
+hi htmlLink            ctermfg=7
 hi ModeMsg             ctermfg=7 ctermbg=NONE
 hi Question            ctermfg=7
 hi SpellLocal          ctermfg=7 ctermbg=0 cterm=undercurl
@@ -246,22 +259,6 @@ hi csAttribute          ctermfg=9
 hi csContextualStatement ctermfg=6
 hi csModifier           ctermfg=6
 
-" HTML {{{
-hi htmlTagName              ctermfg=4
-hi htmlTag                  ctermfg=4
-hi htmlArg                  ctermfg=14
-hi htmlH1                   cterm=bold
-hi htmlBold                 ctermfg=9 cterm=bold
-hi htmlItalic               ctermfg=6 cterm=underline
-hi htmlUnderline            cterm=underline
-hi htmlBoldItalic           cterm=bold,underline
-hi htmlBoldUnderline        cterm=bold,underline
-hi htmlUnderlineItalic      cterm=underline
-hi htmlBoldUnderlineItalic  cterm=bold,underline
-hi! link htmlLink           Underlined
-hi! link htmlEndTag         htmlTag
-
-"}}}
 " XML {{{
 hi xmlTagName       ctermfg=2
 hi xmlTag           ctermfg=10
