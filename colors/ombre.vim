@@ -11,12 +11,14 @@ if version > 580
 endif
 
 let g:colors_name = "ombre"
+
 set background=dark
 
 " NONE
 hi Bold                cterm=bold
 hi Italic              cterm=italic
 hi UnderLine           cterm=underline
+
 hi ColorColumn         ctermfg=NONE ctermbg=0
 hi Conceal             ctermbg=NONE
 hi CursorLine          ctermfg=NONE ctermbg=0 cterm=NONE term=NONE guibg=NONE
@@ -53,6 +55,9 @@ hi PmenuSBar           ctermfg=8 ctermbg=0
 hi Special             ctermfg=8
 hi SpecialKey          ctermfg=8 cterm=NONE
 
+hi! link NERDTreeHelp Comment
+hi! link rustCommentLineDoc Comment
+
 " Red
 hi ALEError            ctermfg=1 cterm=undercurl
 hi ALEErrorSign        ctermfg=1
@@ -75,7 +80,7 @@ hi ALEWarning          ctermfg=3 cterm=undercurl
 hi DiffChange          ctermfg=3 ctermbg=0
 hi GitGutterChange     ctermfg=3
 hi SpecialChar         ctermfg=3
-hi SpellCap            ctermfg=3 ctermbg=NONE cterm=undercurl
+hi SpellCap            ctermfg=3 ctermbg=0 cterm=undercurl
 hi Todo                ctermfg=3 ctermbg=NONE term=NONE
 
 hi! link htmlSpecialChar SpecialChar
@@ -109,12 +114,17 @@ hi Type                ctermfg=12 cterm=NONE
 hi Typedef             ctermfg=12
 
 hi! link Macro Define
+hi! link NERDTreeDirSlash Keyword
 hi! link htmlTag Keyword
 hi! link htmlTagN htmlTag
 hi! link PreCondit PreProc
 hi! link rubyBlockParameterList Operator
 hi! link rubyInterpolationDelimiter Keyword
 hi! link rubyPseudoVariable Keyword
+hi! link rustQuestionMark Keyword
+hi! link VimwikiHR Keyword
+hi! link xmlTagName Keyword
+hi! link yamlDocumentStart Keyword
 
 " Magenta
 hi Float               ctermfg=5
@@ -140,6 +150,7 @@ hi rustMacro           ctermfg=6 cterm=bold
 hi SpecialComment      ctermfg=6 cterm=italic
 hi StatusLine          ctermfg=6 ctermbg=8 cterm=NONE
 hi TabLineSel          ctermfg=6 ctermbg=8
+hi VimwikiLink         ctermfg=6 cterm=underline
 hi WildMenu            ctermfg=6 ctermbg=0
 
 hi! link htmlH1 markdownH1
@@ -175,6 +186,7 @@ hi vimNotation         ctermfg=14
 hi xmlAttrib           ctermfg=14
 hi xmlNamespace        ctermfg=14
 hi yamlBlockMappingKey ctermfg=14
+hi yamlKey             ctermfg=14
 
 hi! link cssClassName cssDefinition
 hi! link cssProp cssDefinition
@@ -260,13 +272,11 @@ hi csContextualStatement ctermfg=6
 hi csModifier           ctermfg=6
 
 " XML {{{
-hi xmlTagName       ctermfg=2
 hi xmlTag           ctermfg=10
 hi! link xmlString  xmlTagName
 hi! link xmlEndTag  xmlTag
 hi! link xmlEqual   xmlTag
 
-hi yamlKey ctermfg=14
 
 "}}}
 " JavaScript {{{
@@ -352,9 +362,6 @@ hi lessClass                ctermfg=14
 hi! link lessVariableValue  Normal
 
 "}}}
-" NERDTree {{{
-hi! link NERDTreeHelp       Comment
-hi NERDTreeDirSlash         ctermfg=5
 
 " Sass
 hi sassMixinName    ctermfg=5
@@ -388,7 +395,6 @@ hi! link VimwikiHeader3     markdownH3
 hi! link VimwikiHeader4     markdownH4
 hi! link VimwikiHeader5     markdownH5
 hi! link VimwikiHeader6     markdownH6
-hi VimwikiLink ctermfg=6 cterm=underline
 
 "}}}
 " Help {{{
@@ -436,11 +442,6 @@ hi mailQuoted5 ctermfg=5
 hi mailQuoted6 ctermfg=9
 
 "}}}
-" Shell {{{
-hi shDerefSimple     ctermfg=11
-hi! link shDerefVar  shDerefSimple
-
-"}}}
 " Syntastic {{{
 hi SyntasticWarningSign       ctermfg=3  ctermbg=NONE
 hi SyntasticErrorSign         ctermfg=1  ctermbg=NONE
@@ -486,8 +487,6 @@ hi pythonStatement      ctermfg=6
 "}}}
 
 hi SignatureMarkText   ctermfg=14
-
-" ALE
 
 " VimPlug
 hi plugDeleted  ctermfg=NONE ctermbg=1
